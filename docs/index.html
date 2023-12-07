@@ -18,7 +18,7 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8111704803989369"
       crossorigin="anonymous"
     ></script>
-    <title>モンスト EXカウンター</title>
+    <title>怪物彈珠 EX計數器</title>
   </head>
   <body>
     <div id="save">
@@ -31,7 +31,7 @@
         <li class="save-list"><button id="btn-save-5">5</button></li>
       </ul>
     </div>
-    <h1>モンストEXカウンター</h1>
+    <h1>怪物彈珠EX計數器</h1>
     <div id="info">
       <div>
         DATA<span id="now-data">1</span>:<span id="data-title"></span
@@ -40,17 +40,17 @@
       <table cellspacing="12" id="info-table">
         <tr class="center">
           <td class="td-info">
-            <span class="info-text">ハマり</span>
+            <span class="info-text">周回次數</span>
             <span id="stuck" class="info-num">&ensp;&ensp;0</span>
           </td>
           <td class="td-info">
-            <span class="info-text">ラック</span>
+            <span class="info-text">運氣</span>
             <span id="luck" class="info-num">&ensp;&ensp;0</span>
           </td>
         </tr>
         <tr class="center">
           <td class="td-info">
-            <span class="info-text">遭遇数</span>
+            <span class="info-text">遭遇數</span>
             <span id="encount" class="info-num">&ensp;&ensp;0</span>
           </td>
           <td class="td-info">
@@ -60,7 +60,7 @@
         </tr>
         <tr class="center">
           <td colspan="2" class="td-info">
-            <span class="info-text">最小/最大ハマり</span>
+            <span class="info-text">最小/最大遭遇</span>
             <span class="info-num">
               <span id="min">&ensp;&ensp;0</span>/<span id="max"
                 >&ensp;&ensp;&ensp;0</span
@@ -70,13 +70,13 @@
         </tr>
         <tr class="center">
           <td colspan="2" class="td-info">
-            <span class="info-text">総周回数</span>
+            <span class="info-text">總周回數</span>
             <span id="total" class="info-num">&ensp;&ensp;&ensp;&ensp;0</span>
           </td>
         </tr>
         <tr class="center">
           <td colspan="2" class="td-info">
-            <span class="info-text-sub">EX敗北数</span>
+            <span class="info-text-sub">EX敗北數</span>
             <span id="exlose" class="info-num-sub"
               >&ensp;&ensp;&ensp;&ensp;0</span
             >
@@ -84,28 +84,28 @@
         </tr>
         <tr class="center" id="treasure">
           <td class="td-info">
-            <span class="info-text-sub">至宝発動数</span>
+            <span class="info-text-sub">至寶發動數</span>
             <span id="treasure-num" class="info-num-sub">&ensp;&ensp;0</span>
           </td>
           <td class="td-info">
-            <span class="info-text-sub">至宝発動率</span>
+            <span class="info-text-sub">至寶發動率</span>
             <span id="treasure-rate" class="info-num-sub">&ensp;0.00</span>%
           </td>
         </tr>
         <tr class="center" id="luckres">
           <td class="td-info">
-            <span class="info-text-sub">ラキリザ数</span>
+            <span class="info-text-sub">好運結果數</span>
             <span id="luckres-num" class="info-num-sub">&ensp;&ensp;0</span>
           </td>
           <td class="td-info">
-            <span class="info-text-sub">ラキリザ率</span>
+            <span class="info-text-sub">好運結果率</span>
             <span id="luckres-rate" class="info-num-sub">&ensp;0.00</span>%
           </td>
         </tr>
       </table>
     </div>
     <div id="precise-calc">
-      <button id="btn-treasure-calc">これまでの至宝発動数を計算する</button>
+      <button id="btn-treasure-calc">計算到目前為止的至寶發動數</button>
     </div>
     <br />
     <div id="btn">
@@ -118,7 +118,7 @@
       <table id="tbl-sub">
         <tr>
           <td><button class="btn-sub" id="btn-edit">編集</button></td>
-          <td><button class="btn-sub" id="btn-reset">リセット</button></td>
+          <td><button class="btn-sub" id="btn-reset">重製</button></td>
         </tr>
       </table>
       <br />
@@ -126,30 +126,32 @@
       <label for="zerohamari-mode">0ハマり表記にする</label>
       <br />
       <input id="kinki-mode" type="checkbox" />
-      <label for="kinki-mode">禁忌EXモードにする</label>
+      <label for="kinki-mode">設定禁忌EX模式</label>
       <br />
       <br />
       <button id="btn-export-bdata" class="btn-bdata">
-        バックアップを作成
+        建立備份
       </button>
       <button id="btn-import-bdata" class="btn-bdata">
-        バックアップを復元
+        恢復備份
       </button>
     </div>
     <br />
     <div id="guide">
       <a href="https://github.com/Reyshi084/game-counter" target="_blank"
-        >[詳しい使い方はこちら]</a
+        >[點擊此處查看詳細使用信息]</a
       >
     </div>
     <div id="attention">
       <ul id="attention-list">
         <li>
-          データは自動で保存されますが、使用前に更新ボタンを押すなどで保存されるかどうかをご確認ください。
+          資料會自動儲存，但使用前請按更新按鈕檢查是否會儲存。
         </li>
-        <li>不具合の報告・要望などは下記TwitterのDMや返信にてお願いします。</li>
         <li>
-          配信等で使用される場合は、このページのURLまたは下記Twitterの情報を概要欄等に載せて頂ければ幸いです。
+	  如果您有任何錯誤報告或請求，請向我們發送 DM 或在下面的 Twitter 上回覆。
+	</li>
+        <li>
+          如果您將其用於分發等，請在摘要欄中包含此頁面的 URL 或下面的 Twitter 訊息，我們將不勝感激。
         </li>
       </ul>
     </div>
