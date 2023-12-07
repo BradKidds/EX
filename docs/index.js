@@ -808,7 +808,7 @@ const onClickResetButton = () => {
     return;
   }
   const isConfirm = window.confirm(
-    "データ" + nowData + "をリセットします。よろしいですか？"
+    "數據" + nowData + "重置。 可以嗎？"
   );
   if (isConfirm) {
     resetTitle();
