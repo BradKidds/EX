@@ -646,7 +646,7 @@ const updateLastDate = () => {
 
 const displayZeroHamariPopup = () => {
   alert(
-    "遭遇ボタンを押すと総周回数がカウントされるようになります。\nEXステージ出現時には周回ボタンを押さず、クエスト終了時に遭遇ボタンを押すようにしてください。"
+    "當您按下遭遇按鈕時，將計算總圈數。 \nEX階段出現時請不要按下軌道按鈕，而是在任務結束時按下遭遇按鈕。"
   );
 };
 
@@ -681,7 +681,7 @@ const convertSavedataToBase64 = () => {
       )
     );
   } catch (e) {
-    window.alert("バックアップを取得できませんでした");
+    window.alert("無法取得備份");
     return false;
   }
 };
@@ -711,7 +711,7 @@ const onClickEncountButton = () => {
   }
   const drop = convertToHalfWidthNum(
     prompt(
-      "ドロップ数を入力（負けてしまった場合は0を入力してください）",
+      "輸入掉落次數（失敗則輸入0）",
       DEFAULT_DROP
     )
   );
@@ -731,7 +731,7 @@ const onClickEncountButton = () => {
     countTreasureNum();
   } else if (drop > 2 && isKinkiMode) {
     countLuckresNum();
-    const isTreasure = confirm("至宝が発動した場合は[OK]を押してください");
+    const isTreasure = confirm("如果至寶已激活，請按【確定】");
     if (isTreasure) {
       countTreasureNum();
     }
@@ -779,7 +779,7 @@ const onClickEditButton = () => {
     calcTreasureRate();
     saveAllInfo(nowData);
   } else {
-    editButton.innerHTML = "完了";
+    editButton.innerHTML = "完成";
     editButton.style.color = "red";
     lapButton.style.color = "gray";
     encountButton.style.color = "gray";
@@ -859,7 +859,7 @@ const onClickZeroHamariCheckBox = () => {
 
 const onClickTreasureCalcButton = () => {
   const conf = confirm(
-    "至宝発動数以外の情報を入力した状態で[OK]を押して次に進んでください"
+    "請輸入至寶啟動次數以外的訊息，然後按[確定]繼續下一步。"
   );
   if (!conf) {
     return;
@@ -912,7 +912,7 @@ const onClickTreasureCalcButton = () => {
 
 const onClickExportDataButton = () => {
   if (isEditNow) {
-    window.alert("編集中はバックアップの作成ができません");
+    window.alert("編輯時無法建立備份。");
     return;
   }
 
@@ -920,20 +920,20 @@ const onClickExportDataButton = () => {
   const bdata = convertSavedataToBase64();
   navigator.clipboard.writeText(bdata).then(() => {
     window.alert(
-      `クリップボードに"DATA${nowData}"のバックアップデータをコピーしました`
+      `複製了備份數據"DATA${nowData}"到剪貼簿`
     );
   });
 };
 
 const onClickImportDataButton = () => {
   if (isEditNow) {
-    window.alert("編集中はバックアップの復元ができません");
+    window.alert("編輯時無法還原備份");
     return;
   }
 
   const bdata = convertToHalfWidthNum(
     prompt(
-      `バックアップデータをペーストしてください\n※注意: 現在表示されている"DATA${nowData}"に上書きされます`
+      `請貼上備份資料\n*注意：目前顯示的「DATA${nowData}」將會被覆蓋。`
     )
   );
   if (bdata === null) {
@@ -942,7 +942,7 @@ const onClickImportDataButton = () => {
 
   const data = convertBase64ToSavedata(bdata);
   if (!data) {
-    window.alert("正しいバックアップデータではありません");
+    window.alert("備份資料不正確");
   } else {
     localStorage.setItem("title" + nowData, data.title);
     localStorage.setItem("stuck" + nowData, data.stuck);
